@@ -1,0 +1,19 @@
+<!-- наследуемся от какого файла -->
+{% extends 'main/base_html.html' %}
+
+{% block title %}
+Создать таск
+{% endblock %}
+
+{% block content %}
+    <h1>Создать таск</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.title }}<br>
+        {{ form.task }}<br>
+        <input type="text" placeholder="введите название" class="form-control"><br>
+        <textarea placeholder="введите описание" class="form-control"></textarea><br>
+        <button type="submit" class="btn btn-success">добавить</button>
+        <span>{{error}}</span>
+    </form>
+{% endblock %}
